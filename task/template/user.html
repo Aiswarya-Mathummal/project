@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+    <!-- Responsive-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="">
+                <div class="" style="color:white">
+                    <form class="login" method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                       <table cellpadding="0" cellspacing="12px" >
+                        <tr>
+                           <td colspan="2" align="center"><img src="{{ user.photo.url }}" width="100px" height="100px"> </td>
+                        </tr>
+                        <tr>
+                            <th>id :</th>
+                            <td><input style="padding:10px;padding-left: 24px;font-weight: 700;width: 300px;transition: .2s;" type="text" value=" {{user.id}} " disabled> </td>
+                        </tr>
+                        <tr>
+                            <th>username : </th>
+                            <td><input style="padding:10px;padding-left: 24px;font-weight: 700;width: 300px;transition: .2s;" type="text" value=" {{user.username}}" disabled></td>
+                        </tr>
+                        <tr>
+                            <th>email : </th>
+                            <td><input style="padding:10px;padding-left: 24px;font-weight: 700;width: 300px;transition: .2s;" type="text" value="{{user.email}} " disabled></td>
+                        </tr>
+                        <tr>
+                            <th>address : </th>
+                            <td><input style="padding:10px;padding-left: 24px;font-weight: 700;width: 300px;transition: .2s;" type="text" value=" {{user.address}}" disabled></td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number :</th>
+                            <td><input style="padding:10px;padding-left: 24px;font-weight: 700;width: 300px;transition: .2s;" type="text" value=" {{user.phone}}" disabled></td>
+                        </tr>
+
+                         
+                        <tr>
+                            <td  align="center">
+                                <a href="{% url 'myapp:update' user.id %}" class="button login__submit" role="button">Edit</a><br><br>
+                            </td>
+                        
+                            <td align="center">
+                            <a href="{% url 'myapp:change_pswd' user.id %}" class="button login__submit" role="button" >Change Password</a><br><br>
+                            </td>
+                            <td  align="center">
+                            <a href="{% url 'myapp:logout' %}" class="button login__submit" role="button">Logout</a><br><br>
+                               
+                            </td>
+                        </tr>
+                    </table>
+
+                    </form>
+                    
+                </div>
+                	
+            </div>
+        </div>
+    </body>
+    </html>
