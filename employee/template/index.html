@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"> -->
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <!-- Responsive-->
+    </head>
+    <body>
+        <form >
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="button" name="" id="regbtn" value="submit">
+        </form>
+        <table id="tb1">
+
+        </table>
+    </body>
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'reg_script.js' %}"></script>
+    <script src="{% static 'details_script.js' %}"></script>
+    </html>

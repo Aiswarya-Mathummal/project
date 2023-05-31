@@ -1,0 +1,29 @@
+$(document).ready(function(){
+    $("#regbtn").click(function(){
+        $fname=$("#id_firstname").val();
+        $lname=$("#id_lastname").val();
+        $age=$("#id_age").val();
+        $addr=$("#id_address").val();
+        $phn=$("#id_phone").val();
+        $email=$("#id_email").val();
+        $pswd=$("#id_password").val();
+        $pht=$("#id_photo").val();
+        $.ajax({
+            url:'register',
+            data:{'fname':$fname,'lname':$lname,'age':$age,'addr':$addr,'phn':$phn,'email':$email,'pswd':$pswd,'pht':$pht},
+            type:'get',
+            datatype:'json',
+            success:function(d){
+                if(d.status){
+                    alert(d.message);
+                }
+                else{
+                    alert(d.message);
+                }
+            },error:function(d1){
+                console.log(d1)
+            }
+
+        });
+    });
+});
